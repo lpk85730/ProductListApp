@@ -19,34 +19,66 @@ class CartDetailsPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(StringConstants.strCartDetails),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Cart ID: ${cart.id}',
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+      body: ListView.separated(
+        itemCount: cart.products.length,
+        itemBuilder: (_, index) {
+          final product = cart.products[index];
+          return Card(
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+              child: Row(
+                children: [
+                  Text('${product.id}', textAlign: TextAlign.center),
+                  const SizedBox(width: 20),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        width: 200,
+                        child: Text(
+                          "Product: \n${product.title}",
+                          maxLines: 5,
+                          softWrap: true,
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      Row(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                '${StringConstants.strQuantity}: ${product.quantity}',
+                              ),
+                              Text(
+                                '${StringConstants.strPrice}: \$${product.price}',
+                              ),
+                              Text(
+                                '${StringConstants.strTotalAmount}: \$${product.total}',
+                              ),
+                            ],
+                          ),
+                          const SizedBox(width: 30),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("${StringConstants.strDiscounted}: ${product.discountPercentage}%"),
+                              Text("${StringConstants.strDiscountedPrice}: \$${product.discountedPrice}"),
+                            ],
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ],
               ),
             ),
-            const SizedBox(height: 8),
-            Text(
-              'User ID: ${cart.userId}',
-              style: const TextStyle(fontSize: 16),
-            ),
-            const SizedBox(height: 16),
-            Text(
-              'Total: \$${cart.total}',
-              style: const TextStyle(fontSize: 18),
-            ),
-            Text(
-              'Total Products: ${cart.totalProducts}',
-              style: const TextStyle(fontSize: 18),
-            ),
-          ],
-        ),
+          );
+        },
+        separatorBuilder: (context, index) {
+          return const SizedBox(height: 10);
+        },
       ),
     );
   }

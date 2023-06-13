@@ -13,6 +13,9 @@ class StringConstants {
   static const String strTotalProduct = 'Total Product';
   static const String strUserID = 'User ID';
   static const String strTotalAmount = 'Total Amount';
+  static const String strQuantity = 'Quantity';
+  static const String strSavedAmount = 'Saved Amount';
+  static const String strDiscounted = 'Discount';
 }
 
 /// Routes
