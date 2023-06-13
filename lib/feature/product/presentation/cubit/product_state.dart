@@ -1,4 +1,4 @@
-part of 'dashboard_cubit.dart';
+part of 'product_cubit.dart';
 
 abstract class ProductsState extends Equatable {
   const ProductsState();
@@ -15,8 +15,12 @@ class ProductDataLoading extends ProductsState {
 }
 
 class ProductDataLoaded extends ProductsState {
+  const ProductDataLoaded({required this.productList});
+
+  final List<Product> productList;
+
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [productList];
 }
 
 class ProductDataFailed extends ProductsState {

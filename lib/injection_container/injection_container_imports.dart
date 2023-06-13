@@ -1,1 +1,11 @@
 export 'package:product_list_app/core/presentation/cubits/check_internet_cubit/check_internet_cubit.dart';
+export 'package:product_list_app/feature/cart/data/datasources/carts_remote_datasource.dart';
+export 'package:product_list_app/feature/cart/data/repositories/carts_repository_impl.dart';
+export 'package:product_list_app/feature/cart/domain/repositories/carts_repository.dart';
+export 'package:product_list_app/feature/cart/domain/usecases/get_carts.dart';
+export 'package:product_list_app/feature/cart/presentation/cubit/carts_cubit.dart';
+export 'package:product_list_app/feature/product/data/datasources/product_remote_datasource.dart';
+export 'package:product_list_app/feature/product/data/repositories/product_repository_impl.dart';
+export 'package:product_list_app/feature/product/domain/repositories/product_repository.dart';
+export 'package:product_list_app/feature/product/domain/usecases/get_products.dart';
+export 'package:product_list_app/feature/product/presentation/cubit/product_cubit.dart';

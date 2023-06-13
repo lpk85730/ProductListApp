@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get_it/get_it.dart';
+import 'package:one_context/one_context.dart';
 import 'package:product_list_app/core/services/api_service.dart';
+import 'package:product_list_app/core/services/short_hand.dart';
 import 'package:product_list_app/injection_container/injects/inject_cubits.dart';
 import 'package:product_list_app/injection_container/injects/inject_datasources.dart';
 import 'package:product_list_app/injection_container/injects/inject_repositories.dart';
@@ -16,7 +18,10 @@ Future<void> init() async {
   );
 
   /// service
-  sl.registerLazySingleton<ApiService>(ApiService.new);
+  sl
+    ..registerFactory<BuildContext>(() => OneContext.instance.context!)
+    ..registerLazySingleton<ApiService>(ApiService.new)
+    ..registerLazySingleton<ShortHand>(ShortHand.new);
 
   /// Data Sources
   InjectableDataSources.inject();

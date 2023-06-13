@@ -3,9 +3,16 @@ import 'package:product_list_app/injection_container/injection_container_imports
 
 class InjectableRepositories {
   InjectableRepositories.inject() {
-    // sl.registerLazySingleton<AuthRepository>(
-    //   () =>
-    //       AuthRepositoryImpl(authRemoteDataSource: sl<AuthRemoteDataSource>()),
-    // );
+    sl
+      ..registerLazySingleton<ProductRepository>(
+        () => ProductRepositoryImpl(
+          productRemoteDataSource: sl<ProductRemoteDataSource>(),
+        ),
+      )
+      ..registerLazySingleton<CartsRepository>(
+        () => CartsRepositoryImpl(
+          cartsRemoteDataSource: sl<CartsRemoteDataSource>(),
+        ),
+      );
   }
 }

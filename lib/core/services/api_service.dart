@@ -5,7 +5,7 @@ class ApiService {
     ..options.connectTimeout = const Duration(milliseconds: 5000)
     ..options.receiveTimeout = const Duration(milliseconds: 5000)
     ..options.sendTimeout = const Duration(milliseconds: 5000)
-    ..options.baseUrl = "sl<AppConfig>().getBaseUrl";
+    ..options.baseUrl = "https://dummyjson.com/";
 
   Future<Response> getRequest({
     required String path,

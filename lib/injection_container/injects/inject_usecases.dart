@@ -3,8 +3,12 @@ import 'package:product_list_app/injection_container/injection_container_imports
 
 class InjectableUseCases {
   InjectableUseCases.inject() {
-    // sl.registerLazySingleton(
-    //   () => SendOtpUC(authRepository: sl<AuthRepository>()),
-    // );
+    sl
+      ..registerLazySingleton(
+        () => GetProductsUC(productRepository: sl<ProductRepository>()),
+      )
+      ..registerLazySingleton(
+        () => GetCartsUC(cartsRepository: sl<CartsRepository>()),
+      );
   }
 }

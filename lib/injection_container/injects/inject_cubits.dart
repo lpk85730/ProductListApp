@@ -3,6 +3,13 @@ import 'package:product_list_app/injection_container/injection_container_imports
 
 class InjectableCubits {
   InjectableCubits.inject() {
-    sl.registerFactory(CheckInternetCubit.new);
+    sl
+      ..registerFactory(CheckInternetCubit.new)
+      ..registerFactory(
+        () => ProductsCubit(getProductsUC: sl<GetProductsUC>()),
+      )
+      ..registerFactory(
+        () => CartsCubit(getCartsUC: sl<GetCartsUC>()),
+      );
   }
 }

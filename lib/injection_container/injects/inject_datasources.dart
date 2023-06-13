@@ -3,8 +3,12 @@ import 'package:product_list_app/injection_container/injection_container_imports
 
 class InjectableDataSources {
   InjectableDataSources.inject() {
-    // sl.registerLazySingleton<AuthRemoteDataSource>(
-    //   () => AuthRemoteDataSourceImpl(),
-    // );
+    sl
+      ..registerLazySingleton<ProductRemoteDataSource>(
+        ProductRemoteDataSourceImpl.new,
+      )
+      ..registerLazySingleton<CartsRemoteDataSource>(
+        CartsRemoteDataSourceImpl.new,
+      );
   }
 }

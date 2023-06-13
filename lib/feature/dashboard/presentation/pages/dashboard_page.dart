@@ -31,8 +31,8 @@ class _DashboardPageState extends State<DashboardPage> {
         ),
         body: const TabBarView(
           children: [
-            CartsPage(),
             ProductsPage(),
+            CartsPage(),
           ],
         ),
       ),
