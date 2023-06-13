@@ -46,25 +46,31 @@ class _DashboardPageState extends State<DashboardPage> {
             ),
           );
         } else {
-          return const Scaffold(
+          return Scaffold(
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     StringConstants.strNoInternetText1,
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 18,
                     ),
                   ),
-                  Text(
+                  const Text(
                     StringConstants.strNoInternetText2,
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 16,
                     ),
                   ),
+                  ElevatedButton(
+                    onPressed: () {
+                      BlocProvider.of<CheckInternetCubit>(context).init();
+                    },
+                    child: const Text(StringConstants.strClickToRefresh),
+                  )
                 ],
               ),
             ),

@@ -13,7 +13,9 @@ class ProductRepositoryImpl implements ProductRepository {
   final ProductRemoteDataSource productRemoteDataSource;
 
   @override
-  Future<Either<Failure, List<Product>>> getProduct(GetProductsParams getProductsParams) async {
+  Future<Either<Failure, List<Product>>> getProduct(
+    GetProductsParams getProductsParams,
+  ) async {
     if (ShortHand.checkInternetCubit.state is Online) {
       try {
         final List<Product> data =

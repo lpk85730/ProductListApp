@@ -11,7 +11,9 @@ class GetProductsUC implements UseCase<List<Product>, GetProductsParams> {
   final ProductRepository productRepository;
 
   @override
-  Future<Either<Failure, List<Product>>> call(GetProductsParams getProductsParams) {
+  Future<Either<Failure, List<Product>>> call(
+    GetProductsParams getProductsParams,
+  ) {
     return productRepository.getProduct(getProductsParams);
   }
 }

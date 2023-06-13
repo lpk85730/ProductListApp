@@ -37,7 +37,7 @@ class CartDetailsPage extends StatelessWidget {
                       SizedBox(
                         width: 200,
                         child: Text(
-                          "Product: \n${product.title}",
+                          "${StringConstants.strProduct}: \n${product.title}",
                           maxLines: 5,
                           softWrap: true,
                         ),
@@ -63,8 +63,12 @@ class CartDetailsPage extends StatelessWidget {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("${StringConstants.strDiscounted}: ${product.discountPercentage}%"),
-                              Text("${StringConstants.strDiscountedPrice}: \$${product.discountedPrice}"),
+                              Text(
+                                "${StringConstants.strDiscounted}: ${product.discountPercentage}%",
+                              ),
+                              Text(
+                                "${StringConstants.strDiscountedPrice}: \$${product.discountedPrice}",
+                              ),
                             ],
                           ),
                         ],

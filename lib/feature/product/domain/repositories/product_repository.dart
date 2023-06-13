@@ -6,6 +6,6 @@ import 'package:product_list_app/feature/product/domain/usecases/get_products.da
 // ignore: one_member_abstracts
 abstract class ProductRepository {
   Future<Either<Failure, List<Product>>> getProduct(
-      GetProductsParams getProductsParams,
+    GetProductsParams getProductsParams,
   );
 }

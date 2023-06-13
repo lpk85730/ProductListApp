@@ -56,7 +56,7 @@ class CheckInternetCubit extends Cubit<CheckInternetState> {
   }
 
   @override
-  Future<void> close()  async {
+  Future<void> close() async {
     await super.close();
     await connectionStream!.cancel();
     await dataConnectionStream!.cancel();

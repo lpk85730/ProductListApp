@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:product_list_app/core/error/failure.dart';
 import 'package:product_list_app/feature/product/domain/entity/product.dart';
@@ -20,10 +19,8 @@ class ProductsCubit extends Cubit<ProductsState> {
       (l) {
         final failure = l as GeneralFailure;
         emit(ProductDataFailed(error: failure.error));
-        debugPrint("Error: ${failure.error}");
       },
       (r) {
-        debugPrint("Data: ${r.length}");
         emit(ProductDataLoaded(productList: r));
       },
     );
