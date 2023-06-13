@@ -22,6 +22,7 @@ class ThemeColors {
   static const Color clrScaffoldBG = Color(0xFFF5F5F5);
   static const Color clrTransparent = Color(0x00ffffff);
   static const Color clrGrey = Color(0xFFB9BABA);
+  static const Color clrGreen = Colors.green;
   static const Color defaultFontColor = clrBlack;
 }
 
