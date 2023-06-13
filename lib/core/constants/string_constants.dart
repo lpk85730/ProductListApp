@@ -16,6 +16,8 @@ class StringConstants {
   static const String strQuantity = 'Quantity';
   static const String strSavedAmount = 'Saved Amount';
   static const String strDiscounted = 'Discount';
+  static const String strNoInternetText1 = 'No Internet Connection Available!';
+  static const String strNoInternetText2 = 'Please try again after sometime';
 }
 
 /// Routes
